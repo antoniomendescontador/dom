@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='UTF-8'>
+    <title>Acessando Atributos #02</title>
+    <link rel='stylesheet' href='css/estilo.css'>
+    <style>
+        #teste{
+            margin-top: 10%;
+        }
+    </style>
+</head>
+
+<body class='conteudo exercicio'>
+    <div id="teste">
+        <label for="compras">Compras</label>
+        <ul id="compras" destino='escritório' data-urgencia="5">
+            <li>Café</li>
+            <li>Água</li>
+            <li>Copo Descartável</li>
+        </ul>
+    </div>
+    <script>
+        const list = document.querySelector('div ul[destino="escritório"]')
+        console.log('Elemento "ul"................................');
+        console.log('childNodes', list.childNodes);
+        console.log('destino', list.destino);
+        console.log('getAttributes', list.getAttribute('destino'));
+        console.log('hasAttirbute', list.hasAttribute('destino'));
+        list.setAttribute('destino', 'empresa')
+        list.setAttribute('status', 'aberto')
+        list.removeAttribute('destino')
+        console.log(list.dataset);
+
+
+        //cuidado
+        const label = document.querySelector('label')
+        console.log(label.for); //dá undefined pois trata-se de um atributo reservado
+        console.log(label.htmlFor);
+        console.log('getAttribut: ', label.getAttribute('for'));
+        
+        
+         
+        
+        
+        
+        
+    </script>
+</body>
+
+</html>
